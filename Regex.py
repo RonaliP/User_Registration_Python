@@ -26,7 +26,12 @@ class RegularExpression():
          else:
              return "INVALID MAIL"
 
-
+    def Phonenumbercheck(self, number):
+        pattern = "^[0-9]{2}[ ][6-9]{1}[0-9]{9}$"
+        if re.match(pattern, number):
+            return "Valid phone number"
+        else:
+            return "Invalid phone number"
 if __name__ == '__main__':
     Regex=RegularExpression()
     print("Enter Firstname")
@@ -38,3 +43,6 @@ if __name__ == '__main__':
     print("ENTER EMAIL")
     mail = input()
     print(Regex.email_check(mail))
+    print("Enter Phone number")
+    phone_number = input()
+    print(Regex.Phonenumbercheck(phone_number))
