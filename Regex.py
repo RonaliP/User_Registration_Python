@@ -32,6 +32,13 @@ class RegularExpression():
             return "Valid phone number"
         else:
             return "Invalid phone number"
+
+    def Passwordvalidation(self,Password):
+        pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$^&*()_-])([a-zA-Z0-9]|[^a-zA-Z0-9]){8,}";
+        if re.match(pattern,Password):
+            return "Valid Password"
+        else:
+            return "Invalid Password"
 if __name__ == '__main__':
     Regex=RegularExpression()
     print("Enter Firstname")
@@ -46,3 +53,6 @@ if __name__ == '__main__':
     print("Enter Phone number")
     phone_number = input()
     print(Regex.Phonenumbercheck(phone_number))
+    print("Enter password")
+    password=input()
+    print(Regex.Passwordvalidation(password))
