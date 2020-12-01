@@ -19,10 +19,14 @@ class RegularExpression():
         else:
             return "Invalid Last name"
 
-"""
-Above function will validate last name
-2nd use case
-"""
+    def email_check(self, email):
+         pattern = "^([A-Za-z]{3,}(.?[A_Za-z0-9]+)?[@][A-Za-z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$"
+         if re.match(pattern, email):
+            return "VALID EMAIL"
+         else:
+             return "INVALID MAIL"
+
+
 if __name__ == '__main__':
     Regex=RegularExpression()
     print("Enter Firstname")
@@ -31,3 +35,6 @@ if __name__ == '__main__':
     print("Enter Last name")
     Last_name = input()
     print(Regex.Lastnamecheck(Last_name))
+    print("ENTER EMAIL")
+    mail = input()
+    print(Regex.email_check(mail))
